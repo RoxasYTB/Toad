@@ -2,12 +2,15 @@ package com.toad.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
 
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Film {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "film_id")
     private Integer filmId; // BIGINT
 
@@ -53,10 +56,6 @@ public class Film {
     // Getters and Setters
     public Integer getFilmId() {
         return filmId;
-    }
-
-    public void setFilmId(Integer filmId) {
-        this.filmId = filmId;
     }
 
     public String getTitle() {
